@@ -1,0 +1,9 @@
+######################## Note for project going forward
+
+now have clean data to work with in tableau.
+
+need to tighten the merge to the demo and classification data. make sure there is column with just city sub, rural
+
+tableau
+
+- assign a special icon in scatter plots for teams that have won championships. the columns should add up
