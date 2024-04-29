@@ -52,4 +52,15 @@ This notebook is dedicated to scraping and storing data from the Michigan High S
 
 
 ### NCES National Center for Education Statistics
-Data 
+Demographic information for the schools was collected from the National Center for Education Statistics [(Homepage)](http://nces.ed.gov). Data for public schools was downloaded as a csv using the NCES' Public School Search [Link](https://nces.ed.gov/ccd/schoolsearch/) for all schools in the state of Michigan. Data for private schools was extracted the same way from the Private School section of the same site [Link](https://nces.ed.gov/surveys/pss/privateschoolsearch/)
+
+Because each dataset included all schools in the state of all grade levels requardless of weither the school sponsered inter schoolastic competitions the data needed a substancial amount of cleaning and standarization before it could be joined with the data from the MHSAA website.
+
+[This notebook](Notebook/Public_Private_School_Info_book.ipynb) provides a comprehensive analysis of demographic data from public and private schools. It includes data processing and visualization to compare and contrast various metrics between these two types of educational institutions.
+
+#### Notebook Structure
+
+- **Data Loading**: The notebook begins by loading the demographic data for both public and private schools into separate Pandas DataFrames.
+- **Data Manipulation**: Several data manipulation steps are carried out to prepare the data for analysis, including adding a column to distinguish between public and private schools.
+- **Data Analysis**: The notebook contains multiple cells dedicated to exploring the data, with a focus on demographic statistics and school types.
+- **Visualization**: Various plots are generated to visualize comparisons between public and private schools, providing insights into their respective demographic distributions.
