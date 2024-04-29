@@ -13,7 +13,8 @@
 https://public.tableau.com/app/profile/justin.smith2295/viz/MichiganHighSchoolSportsAtlas/Main_Dash
 
 ## Data Sources:
-### Michigan High School Athletics Administration [Link to Site](http://www.MHSAA.com)
+### Michigan High School Athletics Administration
+- [Link to Site](http://www.MHSAA.com)
 
 
 #### Scrape and Clean School Information 
@@ -37,6 +38,7 @@ https://public.tableau.com/app/profile/justin.smith2295/viz/MichiganHighSchoolSp
 This notebook is dedicated to scraping and storing data from the Michigan High School Athletic Association (MHSAA) website. It is designed to efficiently gather results of high school sports across Michigan by automating the data collection process for various sports and academic years.
 
 **Target: - Scores Page** to collect all avaiable results for a single sport for a single
+
 ![Single Sport Score Page Example](images/readme_img/scores_page.gif)
 
 
@@ -56,7 +58,7 @@ This notebook is dedicated to scraping and storing data from the Michigan High S
 
 
 
-### NCES National Center for Education Statistics
+### National Center for Education Statistics (NCES)
 Demographic information for the schools was collected from the National Center for Education Statistics [(homepage)](http://nces.ed.gov). Data for public schools was downloaded as a csv using the NCES' Public School Search [link](https://nces.ed.gov/ccd/schoolsearch/) for all schools in the state of Michigan. Data for private schools was extracted the same way from the Private School section of the same site [link](https://nces.ed.gov/surveys/pss/privateschoolsearch/)
 
 Because each dataset included all schools in the state of all grade levels requardless of weither the school sponsered inter schoolastic competitions the data needed a substancial amount of cleaning and standarization before it could be joined with the data from the MHSAA website.
