@@ -9,6 +9,7 @@
 
 
 ## Tableau Public Link to dashboard
+![New Software Test 1](images/readme_img/gif_grab_test_1.gif)
 
 ![Football Animated GIF](images/readme_img/dashboard_football1.gif)
 
