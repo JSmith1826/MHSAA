@@ -3,6 +3,9 @@
 ## Table of Contents
 
 * [Data Source and Collection](#data-sources)
+    * [MHSAA Website](#michigan-high-school-athletics-administration-link-to-site)
+    * [NCES](#nces-national-center-for-education-statistics)
+
 
 
 ## Tableau Public Link to dashboard
@@ -12,7 +15,7 @@ https://public.tableau.com/app/profile/justin.smith2295/viz/MichiganHighSchoolSp
 ## Data Sources:
 ### Michigan High School Athletics Administration [Link to Site](http://www.MHSAA.com)
 
-### Scraping Code: 
+
 #### Scrape and Clean School Information 
 - **Target - School Info Page:** Name, address, enrollment, nickname, colors, league and *MHSAA ID*
 ![School Info Example](images/readme_img/school_info.png)
@@ -24,7 +27,8 @@ https://public.tableau.com/app/profile/justin.smith2295/viz/MichiganHighSchoolSp
 
 ##### Output
 - The output is a CSV file containing all collected school data, ready for further analysis or integration into other datasets.
-- ![School Info Table](images/readme_img/school_info_gif.gif)
+
+![School Info Table](images/readme_img/school_info_gif.gif)
 
 
 
@@ -47,12 +51,13 @@ This notebook is dedicated to scraping and storing data from the Michigan High S
     - **Text files** containing raw JSON data.
     - **Pandas DataFrames / CSV files** containing structured results, ready for analysis and visualization in subsequent notebooks.
     - **Example:**
+
     ![2023 Baseball Table](images/readme_img/results_table.png)
 
 
 
 ### NCES National Center for Education Statistics
-Demographic information for the schools was collected from the National Center for Education Statistics [(Homepage)](http://nces.ed.gov). Data for public schools was downloaded as a csv using the NCES' Public School Search [Link](https://nces.ed.gov/ccd/schoolsearch/) for all schools in the state of Michigan. Data for private schools was extracted the same way from the Private School section of the same site [Link](https://nces.ed.gov/surveys/pss/privateschoolsearch/)
+Demographic information for the schools was collected from the National Center for Education Statistics [(homepage)](http://nces.ed.gov). Data for public schools was downloaded as a csv using the NCES' Public School Search [link](https://nces.ed.gov/ccd/schoolsearch/) for all schools in the state of Michigan. Data for private schools was extracted the same way from the Private School section of the same site [link](https://nces.ed.gov/surveys/pss/privateschoolsearch/)
 
 Because each dataset included all schools in the state of all grade levels requardless of weither the school sponsered inter schoolastic competitions the data needed a substancial amount of cleaning and standarization before it could be joined with the data from the MHSAA website.
 
