@@ -10,6 +10,8 @@
 
 ## Tableau Public Link to dashboard
 
+![Football Animated GIF](images/readme_img/dashboard_football1.gif)
+
 https://public.tableau.com/app/profile/justin.smith2295/viz/MichiganHighSchoolSportsAtlas/Main_Dash
 
 ## Data Sources:
