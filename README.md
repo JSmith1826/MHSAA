@@ -1,4 +1,4 @@
-# MHSAA Statistics Project
+# MHSAA Statistics Dashboard
 
 
 
@@ -21,45 +21,9 @@
 ### Michigan High School Athletics Administration
 - [MHSAA Homepage](http://www.MHSAA.com)
 
-
-#### Scrape and Clean School Information 
-- **Target - School Info Page:** Name, address, enrollment, nickname, colors, league and *MHSAA ID*
-![School Info Example](images/readme_img/school_info.png)
-
-**Notebook: [`MHSAA_School_Info_scrape_workbook.ipynb`](Notebook/MHSAA_School_Info_scrape_workbook.ipynb)**
-- **Data Scraping**: Extracts school details from the MHSAA website by iterating over a range of school IDs. Each school's information is fetched via a JSON response, which includes fields like school name, address, enrollment numbers, and sports details.
-- **Data Transformation**: The raw JSON data for each school is parsed and transformed into a structured pandas DataFrame, making it easier to handle and analyze.
-- **Efficiency**: Includes optimizations such as time delays between requests to manage server load and avoid being blocked by the website.
-
-##### Output
-- The output is a CSV file containing all collected school data, ready for further analysis or integration into other datasets.
-
-![School Info Table](images/readme_img/school_info_gif.gif)
-
-
-
-
-
-
-### National Center for Education Statistics (NCES)
-Demographic information for the schools was collected from the National Center for Education Statistics [(homepage)](http://nces.ed.gov). Data for public schools was downloaded as a csv using the NCES' Public School Search [link](https://nces.ed.gov/ccd/schoolsearch/) for all schools in the state of Michigan. Data for private schools was extracted the same way from the Private School section of the same site [link](https://nces.ed.gov/surveys/pss/privateschoolsearch/)
-
-Because each dataset included all schools in the state of all grade levels requardless of weither the school sponsered inter schoolastic competitions the data needed a substancial amount of cleaning and standarization before it could be joined with the data from the MHSAA website.
-
-[`Public_Private_School_Info_book.ipynb`](Notebook/Public_Private_School_Info_book.ipynb) provides a comprehensive analysis of demographic data from public and private schools. It includes data processing and visualization to compare and contrast various metrics between these two types of educational institutions.
-
-#### Notebook Structure
-
-- **Data Loading**: The notebook begins by loading the demographic data for both public and private schools into separate Pandas DataFrames.
-- **Data Manipulation**: Several data manipulation steps are carried out to prepare the data for analysis, including adding a column to distinguish between public and private schools.
-- **Data Analysis**: The notebook contains multiple cells dedicated to exploring the data, with a focus on demographic statistics and school types.
-- **Visualization**: Various plots are generated to visualize comparisons between public and private schools, providing insights into their respective demographic distributions.
-
-
-## Data Transformation
-
-### Situational and Yearly Results Tranformation
-The [`Yearly_data_frame_creator_v2.ipynb`](Notebook/Yearly_data_frame_creator_v2.ipynb) notebook includes a furthur evolution of the scraping strategy. In addition to scraping the notebook classifies every game a number of ways. [Regular season/post season, Home/Away, Close game/blowout].
+#### Game Result Collection and Transformation
+The [`Yearly_data_frame_creator_v2.ipynb`](Notebook/Yearly_data_frame_creator_v2.ipynb) notebook impliments the final evolution of the scraping strategy. In addition to scraping the game results for a set range of years and lists of sports. After scraping the notebook classifies every game a number of ways. [Regular season/post season, Home/Away, Close game/blowout]. 
+- You can see earlier iterations of the result scraping and exploration code [below](#depreciated-notebooks--steps-along-the-way)
 
 ##### Data Extraction and Preprocessing:
 - Extracts sports data by constructing URLs dynamically based on academic year start and end dates.
@@ -76,12 +40,51 @@ The [`Yearly_data_frame_creator_v2.ipynb`](Notebook/Yearly_data_frame_creator_v2
 
 ![All Sports After Classification](images/readme_img/all_sport_output.gif)
 
+#### Scrape and Clean School Information 
+
+**Notebook: [`MHSAA_School_Info_scrape_workbook.ipynb`](Notebook/MHSAA_School_Info_scrape_workbook.ipynb)** creates a table of all schools represented in the MHSAA database. Each school in the MHSAA database is assigned a 4 digit code.This notebook iterates over a range of possible school ID numbers, finds valid ones and collects the information contained on the school info page for each entry.
+
+- **Target - School Info Page:** Name, address, enrollment, nickname, colors, league and *MHSAA ID*
+![School Info Example](images/readme_img/school_info.png)
+
+- **Data Scraping**: Extracts school details from the MHSAA website by iterating over a range of school IDs. Each school's information is fetched via a JSON response, which includes fields like school name, address, enrollment numbers, and sports details.
+- **Data Transformation**: The raw JSON data for each school is parsed and transformed into a pandas DataFrame
+- **Efficiency**: Includes optimizations such as time delays between requests to manage server load and avoid being blocked by the website.
+
+##### Output
+- The output is a CSV file containing all collected school data. The wide net cast, manually checking every possible school ID number, returns a dataset that includes every  school name that has appeared in a result in any sport in any of the specified years. This is going to include schools from neighboring states, schools that are no longer open and a handful of Jr High Schools whose results are stored in the same database.
+
+This data will need to be throughly cleaned and filtered later in the school matching notebook
+![School Info Table](images/readme_img/school_info_gif.gif)
+
+
+
+
+
+
+### National Center for Education Statistics (NCES)
+Demographic information for the schools was collected from the National Center for Education Statistics [(homepage)](http://nces.ed.gov). Data for public schools was downloaded as a csv using the NCES' Public School Search [link](https://nces.ed.gov/ccd/schoolsearch/) for all schools in the state of Michigan. Data for private schools was extracted the same way from the Private School section of the same site [link](https://nces.ed.gov/surveys/pss/privateschoolsearch/)
+
+Beacause the dataset incudes all schools in the state of all grade levels a substancial amount of cleaning and standarization is required before joining with data from the MHSAA website.
+
+[`Public_Private_School_Info_book.ipynb`](Notebook/Public_Private_School_Info_book.ipynb) 
+- **Data Manipulation**: Several data manipulation steps are carried out to prepare the data for analysis, including adding a column to distinguish between public and private schools.
+- **Data Analysis**: The notebook contains multiple cells dedicated to exploring the data, with a focus on demographic statistics and school types.
+- **Visualization**: Various plots are generated to visualize comparisons between public and private schools, providing insights into their respective demographic distributions.
+
+#### Output
+- Cleaned table of demographic data for Michigan Schools, filtered to only contain schools that offer interscolastic sports at the high school level.
+
+
+
+
 
 
 ### Depreciated Notebooks / Steps along the way
 
 
-#### Scrape Sports Results
+#### Scrape Sports Results - Initial score scraping approach
+
 The [`extract_data_by_sport_workbook.ipynb`](Notebook/extract%20data%20by%20sport%20workbook.ipynb)
 notebook is dedicated to scraping and storing data from the Michigan High School Athletic Association (MHSAA) website. It is designed to efficiently gather results of high school sports across Michigan by automating the data collection process for various sports and academic years.
 
