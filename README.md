@@ -1,19 +1,21 @@
 # MHSAA Statistics Project
 
+
+
+## Tableau Public Link to dashboard
+![New Software Test 1](images/readme_img/gif_grab_test_1.gif)
+![Ice Hockey](images/readme_img/ice_hockey1.gif)
+
+
+[Link To Full Tableau Public Visualization](https://public.tableau.com/app/profile/justin.smith2295/viz/MichiganHighSchoolSportsAtlas/Main_Dash)
+
+
 ## Table of Contents
 
 * [Data Source and Collection](#data-sources)
     * [MHSAA Website](#michigan-high-school-athletics-administration-link-to-site)
     * [NCES](#nces-national-center-for-education-statistics)
 
-
-
-## Tableau Public Link to dashboard
-![New Software Test 1](images/readme_img/gif_grab_test_1.gif)
-
-![Football Animated GIF](images/readme_img/dashboard_football1.gif)
-
-https://public.tableau.com/app/profile/justin.smith2295/viz/MichiganHighSchoolSportsAtlas/Main_Dash
 
 ## Data Sources:
 ### Michigan High School Athletics Administration
